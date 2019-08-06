@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Travelmantics</string>
+    <string name="app_name">Travel Mantics</string>
     <string name="hint_name">Name</string>
     <string name="hint_price">Price</string>
     <string name="hint_description">Description</string>

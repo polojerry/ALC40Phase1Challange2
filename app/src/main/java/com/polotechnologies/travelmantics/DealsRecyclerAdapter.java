@@ -115,7 +115,7 @@ public class DealsRecyclerAdapter extends RecyclerView.Adapter<DealsRecyclerAdap
         private void Bind(Deal deal){
             dealName.setText(deal.getDealName());
             dealDescription.setText(deal.getDealDescription());
-            dealPrice.setText(deal.getDealPrice());
+            dealPrice.setText(String.format("Ksh %s", deal.getDealPrice()));
 
             Picasso.get()
                     .load(deal.getDealImageUrl())

@@ -16,36 +16,38 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp">
 
 
             <ImageView
                 android:id="@+id/img_deal"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="117dp"
+                android:layout_height="107dp"
                 android:scaleType="fitXY"
-                tools:src="@drawable/trial"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/trial" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_deal_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="16dp"
-                tools:text="Sychelees"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 app:layout_constraintStart_toEndOf="@+id/img_deal"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sychelees" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_deal_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="190dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
                 android:textSize="14sp"
+                android:textAlignment="textStart"
                 app:layout_constraintStart_toEndOf="@+id/img_deal"
                 app:layout_constraintTop_toBottomOf="@+id/tv_deal_name"
                 tools:text="A trip to Sychelles of a life time" />
@@ -54,13 +56,14 @@
                 android:id="@+id/tv_deal_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                tools:text="50,000"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:inputType="number"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_deal_description" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_deal_description"
+                tools:text="50,000" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

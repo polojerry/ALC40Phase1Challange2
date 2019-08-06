@@ -1,6 +1,7 @@
 package com.polotechnologies.travelmantics;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,7 @@ public class FirebaseUtil {
             sAuthStateListener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                    caller.setTheme(R.style.AppTheme);
 
                     if(firebaseAuth.getCurrentUser() == null){
                         SignIn();

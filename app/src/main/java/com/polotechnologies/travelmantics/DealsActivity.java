@@ -1,22 +1,17 @@
 package com.polotechnologies.travelmantics;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DealsActivity extends AppCompatActivity {
@@ -29,12 +24,8 @@ public class DealsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_deals);
-
         newDealFab = findViewById(R.id.fab_new_deal);
         mRecyclerView = findViewById(R.id.rv_deals);
-        if(!FirebaseUtil.isAdmin){
-            hideFab();
-        }
 
 
         newDealFab.setOnClickListener(v -> {
@@ -73,6 +64,21 @@ public class DealsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        startLoad();
+
+    }
+
+    public  void hideFab(){
+        newDealFab.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+    public void startLoad(){
         FirebaseUtil.InstantiateFirebaseReference("travelDeals",this);
         final DealsRecyclerAdapter mAdapter = new DealsRecyclerAdapter();
         mRecyclerView.setAdapter(mAdapter);
@@ -81,13 +87,5 @@ public class DealsActivity extends AppCompatActivity {
         if(!FirebaseUtil.isAdmin){
             hideFab();
         }
-
-    }
-
-    public  void hideFab(){
-        newDealFab.setVisibility(View.GONE);
-    }
-    public  void showFab(){
-        newDealFab.setVisibility(View.VISIBLE);
     }
 }
